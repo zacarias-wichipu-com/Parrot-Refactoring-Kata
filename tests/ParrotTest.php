@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Parrot\Tests;
 
-use Exception;
 use Parrot\Parrot;
 use Parrot\ParrotTypeEnum;
 use PHPUnit\Framework\TestCase;
