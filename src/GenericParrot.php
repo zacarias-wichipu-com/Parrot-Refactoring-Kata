@@ -20,12 +20,26 @@ final readonly class GenericParrot implements Parrot
         float $voltage,
         bool $isNailed
     ): Parrot {
-        return new self(
-            type: $type,
-            numberOfCoconuts: $numberOfCoconuts,
-            voltage: $voltage,
-            isNailed: $isNailed
-        );
+        return match ($type) {
+            ParrotType::EUROPEAN => new self(
+                type: $type,
+                numberOfCoconuts: $numberOfCoconuts,
+                voltage: $voltage,
+                isNailed: $isNailed
+            ),
+            ParrotType::AFRICAN => new self(
+                type: $type,
+                numberOfCoconuts: $numberOfCoconuts,
+                voltage: $voltage,
+                isNailed: $isNailed
+            ),
+            ParrotType::NORWEGIAN_BLUE => new self(
+                type: $type,
+                numberOfCoconuts: $numberOfCoconuts,
+                voltage: $voltage,
+                isNailed: $isNailed
+            ),
+        };
     }
 
     public function getSpeed(): float
