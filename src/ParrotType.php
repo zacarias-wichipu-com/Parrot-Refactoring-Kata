@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Parrot;
 
 /**
- * Class ParrotTypeEnum
+ * Class ParrotType
  *
  * @package Parrot
  */
-abstract class ParrotTypeEnum
+abstract class ParrotType
 {
     public const EUROPEAN = 0;
 
