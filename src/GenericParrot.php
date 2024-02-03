@@ -21,12 +21,7 @@ final readonly class GenericParrot implements Parrot
         bool $isNailed
     ): Parrot {
         return match ($type) {
-            ParrotType::EUROPEAN => new self(
-                type: $type,
-                numberOfCoconuts: $numberOfCoconuts,
-                voltage: $voltage,
-                isNailed: $isNailed
-            ),
+            ParrotType::EUROPEAN => new EuropeanParrot(),
             ParrotType::AFRICAN => new self(
                 type: $type,
                 numberOfCoconuts: $numberOfCoconuts,
