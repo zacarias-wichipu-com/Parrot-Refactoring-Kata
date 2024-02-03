@@ -6,7 +6,7 @@ namespace Parrot;
 
 use Exception;
 
-readonly class Parrot
+final readonly class Parrot
 {
     public function __construct(
         /**
