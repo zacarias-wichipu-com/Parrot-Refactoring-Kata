@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Parrot;
 
-use Exception;
-
 final readonly class GenericParrot implements Parrot
 {
     public function __construct(
@@ -16,32 +14,21 @@ final readonly class GenericParrot implements Parrot
     ) {
     }
 
-    /**
-     * @throws Exception
-     */
     public function getSpeed(): float
     {
         return match ($this->type) {
             ParrotType::EUROPEAN => $this->getBaseSpeed(),
-            ParrotType::AFRICAN => max(
-                0,
-                $this->getBaseSpeed() - $this->getLoadFactor() * $this->numberOfCoconuts
-            ),
+            ParrotType::AFRICAN => max(0, $this->getBaseSpeed() - $this->getLoadFactor() * $this->numberOfCoconuts),
             ParrotType::NORWEGIAN_BLUE => $this->isNailed ? 0 : $this->getBaseSpeedWith($this->voltage),
-            default => throw new Exception('Should be unreachable'),
         };
     }
 
-    /**
-     * @throws Exception
-     */
     public function getCry(): string
     {
         return match ($this->type) {
             ParrotType::EUROPEAN => 'Sqoork!',
             ParrotType::AFRICAN => 'Sqaark!',
             ParrotType::NORWEGIAN_BLUE => $this->voltage > 0 ? 'Bzzzzzz' : '...',
-            default => throw new Exception('Should be unreachable'),
         };
     }
 
