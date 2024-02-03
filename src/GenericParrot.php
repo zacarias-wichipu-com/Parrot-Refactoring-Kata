@@ -6,12 +6,26 @@ namespace Parrot;
 
 final readonly class GenericParrot implements Parrot
 {
-    public function __construct(
+    private function __construct(
         private ParrotType $type,
         private int $numberOfCoconuts,
         private float $voltage,
         private bool $isNailed
     ) {
+    }
+
+    public static function hatchAParrot(
+        ParrotType $type,
+        int $numberOfCoconuts,
+        float $voltage,
+        bool $isNailed
+    ): Parrot {
+        return new self(
+            type: $type,
+            numberOfCoconuts: $numberOfCoconuts,
+            voltage: $voltage,
+            isNailed: $isNailed
+        );
     }
 
     public function getSpeed(): float

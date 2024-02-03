@@ -134,7 +134,7 @@ class ParrotTest extends TestCase
 
     private function getParrot(ParrotType $type, int $numberOfCoconuts, float $voltage, bool $isNailed): Parrot
     {
-        return new GenericParrot(
+        return GenericParrot::hatchAParrot(
             type: $type,
             numberOfCoconuts: $numberOfCoconuts,
             voltage: $voltage,
