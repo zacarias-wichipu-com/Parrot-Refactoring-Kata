@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Parrot\Tests;
 
-use Parrot\Parrot;
+use Parrot\GenericParrot;
 use Parrot\ParrotType;
 use PHPUnit\Framework\TestCase;
 
@@ -131,9 +131,9 @@ class ParrotTest extends TestCase
         self::assertSame('...', $parrot->getCry());
     }
 
-    private function getParrot(ParrotType $type, int $numberOfCoconuts, float $voltage, bool $isNailed): Parrot
+    private function getParrot(ParrotType $type, int $numberOfCoconuts, float $voltage, bool $isNailed): GenericParrot
     {
-        return new Parrot(
+        return new GenericParrot(
             type: $type,
             numberOfCoconuts: $numberOfCoconuts,
             voltage: $voltage,

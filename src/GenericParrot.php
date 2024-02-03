@@ -6,7 +6,7 @@ namespace Parrot;
 
 use Exception;
 
-final readonly class Parrot
+final readonly class GenericParrot
 {
     public function __construct(
         private ParrotType $type,

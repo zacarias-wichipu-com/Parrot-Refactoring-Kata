@@ -7,7 +7,7 @@ namespace Parrot;
 /**
  * Class ParrotType
  *
- * @package Parrot
+ * @package GenericParrot
  */
 enum ParrotType: int
 {
