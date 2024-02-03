@@ -12,7 +12,12 @@ class ParrotTest extends TestCase
 {
     public function testSpeedOfEuropeanParrot(): void
     {
-        $parrot = new Parrot(ParrotTypeEnum::EUROPEAN, 0, 0, false);
+        $parrot = $this->getParrot(
+            type: ParrotTypeEnum::EUROPEAN,
+            numberOfCoconuts: 0,
+            voltage: 0,
+            isNailed: false
+        );
         self::assertSame(12.0, $parrot->getSpeed());
     }
 
@@ -81,5 +86,10 @@ class ParrotTest extends TestCase
     {
         $parrot = new Parrot(ParrotTypeEnum::NORWEGIAN_BLUE, 0, 0, false);
         self::assertSame('...', $parrot->getCry());
+    }
+
+    private function getParrot(int $type, int $numberOfCoconuts, float $voltage, bool $isNailed): Parrot
+    {
+        return new Parrot($type, $numberOfCoconuts, $voltage, $isNailed);
     }
 }
