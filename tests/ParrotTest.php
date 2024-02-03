@@ -13,7 +13,7 @@ class ParrotTest extends TestCase
     public function testSpeedOfEuropeanParrot(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::EUROPEAN->value,
+            type: ParrotType::EUROPEAN,
             numberOfCoconuts: 0,
             voltage: 0,
             isNailed: false
@@ -24,7 +24,7 @@ class ParrotTest extends TestCase
     public function testSpeedOfAfricanParrotWithOneCoconut(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::AFRICAN->value,
+            type: ParrotType::AFRICAN,
             numberOfCoconuts: 1,
             voltage: 0,
             isNailed: false
@@ -35,7 +35,7 @@ class ParrotTest extends TestCase
     public function testSpeedOfAfricanParrotWithTwoCoconuts(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::AFRICAN->value,
+            type: ParrotType::AFRICAN,
             numberOfCoconuts: 2,
             voltage: 0,
             isNailed: false
@@ -46,7 +46,7 @@ class ParrotTest extends TestCase
     public function testSpeedOfAfricanParrotWithNoCoconuts(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::AFRICAN->value,
+            type: ParrotType::AFRICAN,
             numberOfCoconuts: 0,
             voltage: 0,
             isNailed: false
@@ -57,7 +57,7 @@ class ParrotTest extends TestCase
     public function testSpeedNorwegianBlueParrotNailed(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::NORWEGIAN_BLUE->value,
+            type: ParrotType::NORWEGIAN_BLUE,
             numberOfCoconuts: 0,
             voltage: 1.5,
             isNailed: true
@@ -68,7 +68,7 @@ class ParrotTest extends TestCase
     public function testSpeedNorwegianBlueParrotNotNailed(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::NORWEGIAN_BLUE->value,
+            type: ParrotType::NORWEGIAN_BLUE,
             numberOfCoconuts: 0,
             voltage: 1.5,
             isNailed: false
@@ -79,7 +79,7 @@ class ParrotTest extends TestCase
     public function testSpeedNorwegianBlueParrotNotNailedHighVoltage(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::NORWEGIAN_BLUE->value,
+            type: ParrotType::NORWEGIAN_BLUE,
             numberOfCoconuts: 0,
             voltage: 4,
             isNailed: false
@@ -87,22 +87,10 @@ class ParrotTest extends TestCase
         self::assertSame(24.0, $parrot->getSpeed());
     }
 
-    public function testAnUnknownParrotWillWillThrownAnException(): void
-    {
-        $this->expectExceptionMessage('Should be unreachable');
-        $unknownParrot = new Parrot(
-            type: -1,
-            numberOfCoconuts: 0,
-            voltage: 0,
-            isNailed: false
-        );
-        $unknownParrot->getSpeed();
-    }
-
     public function testGetCryOfEuropeanParrot(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::EUROPEAN->value,
+            type: ParrotType::EUROPEAN,
             numberOfCoconuts: 0,
             voltage: 0,
             isNailed: false
@@ -113,7 +101,7 @@ class ParrotTest extends TestCase
     public function testGetCryOfAfricanParrot(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::AFRICAN->value,
+            type: ParrotType::AFRICAN,
             numberOfCoconuts: 1,
             voltage: 0,
             isNailed: false
@@ -124,7 +112,7 @@ class ParrotTest extends TestCase
     public function testGetCryOfNorwegianBlueHighVoltage(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::NORWEGIAN_BLUE->value,
+            type: ParrotType::NORWEGIAN_BLUE,
             numberOfCoconuts: 0,
             voltage: 4,
             isNailed: false
@@ -135,7 +123,7 @@ class ParrotTest extends TestCase
     public function testGetCryOfNorwegianBlueNoVoltage(): void
     {
         $parrot = $this->getParrot(
-            type: ParrotType::NORWEGIAN_BLUE->value,
+            type: ParrotType::NORWEGIAN_BLUE,
             numberOfCoconuts: 0,
             voltage: 0,
             isNailed: false
@@ -143,7 +131,7 @@ class ParrotTest extends TestCase
         self::assertSame('...', $parrot->getCry());
     }
 
-    private function getParrot(int $type, int $numberOfCoconuts, float $voltage, bool $isNailed): Parrot
+    private function getParrot(ParrotType $type, int $numberOfCoconuts, float $voltage, bool $isNailed): Parrot
     {
         return new Parrot(
             type: $type,
