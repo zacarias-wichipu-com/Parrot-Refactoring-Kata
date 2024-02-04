@@ -6,9 +6,11 @@ namespace Parrot;
 
 final readonly class AfricanParrot implements Parrot
 {
-    const float BASE_SPEED = 12.0;
-    const string CRY = 'Sqaark!';
-    const float LOAD_FACTOR = 9.0;
+    public const float BASE_SPEED = 12.0;
+
+    public const string CRY = 'Sqaark!';
+
+    public const float LOAD_FACTOR = 9.0;
 
     public function __construct(
         private int $numberOfCoconuts,

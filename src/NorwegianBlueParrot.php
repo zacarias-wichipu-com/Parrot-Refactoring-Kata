@@ -6,10 +6,13 @@ namespace Parrot;
 
 final readonly class NorwegianBlueParrot implements Parrot
 {
-    const float BASE_SPEED = 12.0;
-    const float MAX_SPEED = 24.0;
-    const string CRY = 'Bzzzzzz';
-    const string SILENCE = '...';
+    public const float BASE_SPEED = 12.0;
+
+    public const float MAX_SPEED = 24.0;
+
+    public const string CRY = 'Bzzzzzz';
+
+    public const string SILENCE = '...';
 
     public function __construct(
         private float $voltage,
