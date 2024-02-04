@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Parrot;
 
-final readonly class GenericParrot implements Parrot
+final readonly class GenericParrot
 {
     private function __construct(
         private ParrotType $type,
@@ -30,8 +30,8 @@ final readonly class GenericParrot implements Parrot
     public function getSpeed(): float
     {
         return match ($this->type) {
-            ParrotType::EUROPEAN => $this->getBaseSpeed(),
             ParrotType::AFRICAN => max(0, $this->getBaseSpeed() - $this->getLoadFactor() * $this->numberOfCoconuts),
+            ParrotType::EUROPEAN => $this->getBaseSpeed(),
             ParrotType::NORWEGIAN_BLUE => $this->isNailed ? 0 : $this->getBaseSpeedWith($this->voltage),
         };
     }
