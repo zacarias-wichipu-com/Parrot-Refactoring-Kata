@@ -23,12 +23,7 @@ final readonly class GenericParrot implements Parrot
         return match ($type) {
             ParrotType::EUROPEAN => new EuropeanParrot(),
             ParrotType::AFRICAN => new AfricanParrot(numberOfCoconuts: $numberOfCoconuts),
-            ParrotType::NORWEGIAN_BLUE => new self(
-                type: $type,
-                numberOfCoconuts: $numberOfCoconuts,
-                voltage: $voltage,
-                isNailed: $isNailed
-            ),
+            ParrotType::NORWEGIAN_BLUE => new NorwegianBlueParrot(voltage: $voltage, isNailed: $isNailed),
         };
     }
 

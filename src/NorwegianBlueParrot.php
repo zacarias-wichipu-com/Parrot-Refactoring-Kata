@@ -11,7 +11,7 @@ final readonly class NorwegianBlueParrot implements Parrot
     const string CRY = 'Bzzzzzz';
     const string SILENCE = '...';
 
-    private function __construct(
+    public function __construct(
         private float $voltage,
         private bool $isNailed
     ) {
