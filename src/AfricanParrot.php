@@ -6,7 +6,7 @@ namespace Parrot;
 
 final readonly class AfricanParrot implements Parrot
 {
-    const float SPEED = 12.0;
+    const float BASE_SPEED = 12.0;
     const string CRY = 'Sqaark!';
     const float LOAD_FACTOR = 9.0;
 
@@ -17,7 +17,7 @@ final readonly class AfricanParrot implements Parrot
 
     public function getSpeed(): float
     {
-        return max(0, self::SPEED - self::LOAD_FACTOR * $this->numberOfCoconuts);
+        return max(0, self::BASE_SPEED - self::LOAD_FACTOR * $this->numberOfCoconuts);
     }
 
     public function getCry(): string

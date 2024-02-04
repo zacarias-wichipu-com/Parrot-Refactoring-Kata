@@ -6,12 +6,12 @@ namespace Parrot;
 
 final readonly class EuropeanParrot implements Parrot
 {
-    const float SPEED = 12.0;
+    const float BASE_SPEED = 12.0;
     const string CRY = 'Sqoork!';
 
     public function getSpeed(): float
     {
-        return self::SPEED;
+        return self::BASE_SPEED;
     }
 
     public function getCry(): string
