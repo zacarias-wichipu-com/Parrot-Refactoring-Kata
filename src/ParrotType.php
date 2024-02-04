@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace Parrot;
 
-/**
- * Class ParrotType
- *
- * @package GenericParrot
- */
 enum ParrotType: int
 {
     case EUROPEAN = 0;

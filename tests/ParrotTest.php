@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Parrot\Tests;
 
-use Parrot\GenericParrot;
 use Parrot\Parrot;
+use Parrot\ParrotIncubator;
 use Parrot\ParrotType;
 use PHPUnit\Framework\TestCase;
 
@@ -134,7 +134,7 @@ class ParrotTest extends TestCase
 
     private function getParrot(ParrotType $type, int $numberOfCoconuts, float $voltage, bool $isNailed): Parrot
     {
-        return GenericParrot::hatchAParrot(
+        return ParrotIncubator::hatchAParrot(
             type: $type,
             numberOfCoconuts: $numberOfCoconuts,
             voltage: $voltage,
