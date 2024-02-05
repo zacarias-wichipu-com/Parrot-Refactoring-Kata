@@ -16,6 +16,10 @@ Acknowlegements
 This code is heavily inspired by one of the examples in Martin Fowler's book "Refactoring". It's a classic, and if it's
 not on your bookshelf already I suggest you treat yourself to a copy!
 
+Thanks also to Fran Iglesias for the teachings and for sharing his knowledge and experience in
+the [refactoring to polymorphism exercise](https://www.youtube.com/watch?v=Vmg1m_pfkk8) of the Emily
+Blanche [Parrot Refactoring Kata](https://github.com/emilybache/Parrot-Refactoring-Kata).
+
 ## Installation
 
 The kata uses:
